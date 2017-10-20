@@ -1,0 +1,103 @@
+<!-- type HTML -->
+<html>
+    
+    <script>
+    
+        window.onload=function() {
+  upTime('may,06,2001,06:32:23');
+};
+function upTime(countTo) {
+  now = new Date();
+  countTo = new Date(countTo);
+  difference = (now-countTo);
+  days=Math.floor(difference/(60*60*1000*24)*1);
+  years = Math.floor(days / 365);
+  if (years > 1){ days = days - (years * 365)}
+  hours=Math.floor((difference%(60*60*1000*24))/(60*60*1000)*1);
+  mins=Math.floor(((difference%(60*60*1000*24))%(60*60*1000))/(60*1000)*1);
+  secs=Math.floor((((difference%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1);
+  document.getElementById('years').firstChild.nodeValue = years;
+  document.getElementById('days').firstChild.nodeValue = days;
+  document.getElementById('hours').firstChild.nodeValue = hours;
+  document.getElementById('minutes').firstChild.nodeValue = mins;
+  document.getElementById('seconds').firstChild.nodeValue = secs;
+
+  clearTimeout(upTime.to);
+  upTime.to=setTimeout(function(){ upTime(countTo); },1000);
+}
+        
+    </script>
+    
+    
+    
+    
+    
+   <style> 
+       body{
+           background-color:rgb(3,8,10);
+       }
+       h1{
+           color:rgb(20,195,26);
+           font-size: 170
+       }
+       h2{
+           color:rgb(20,195,26);
+           font-size: 130
+       }
+       font{
+           color:rgb(20,200,26);
+       }
+       
+       p{
+           color:rgb(300,300,300);
+       }
+       
+       .inline {
+           display: inline;
+       }
+    </style> 
+   
+    <body>
+        
+ <center> 
+    <h1>My name is Ryan Aylmer</h1>
+        <h1>Nice to meet you</h1>
+        
+    <h2>Let me tell you all about myself!</h2>
+    
+    <font size="4">(I’m not conceited. I swear...)
+        
+        <br>
+        <br>
+        <br>
+        
+     </font>
+         </center>
+       <font size=10>
+        <p>First Name: <u>Ryan</u></p>
+        <p>Middle Initial: <u>E.</u></p>
+        <p>Last Name: <u>Aylmer</u></p>
+        <p class="inline">Age:</p>
+        <p class="inline" id="years">00</p> 
+        <p class="inline" class="timeRefYears">years</p>
+        <p class="inline" id="days">00</p>
+        <p class="inline" class="timeRefDays">days</p>
+        <p class="inline" id="hours">00</p>
+        <p class="inline" class="timeRefHours">hours</p>
+        <p class="inline" id="minutes">00</p>
+        <p class="inline" class="timeRefMinutes">minutes</p>
+        <p class="inline" id="seconds">00</p>
+        <p class="inline" class="timeRefSeconds">second</p>
+                </font>
+        
+        
+        
+        <center>
+         <iframe width="1000" height="565" src="https://www.youtube.com/embed/PBQIg9wCrgc?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0"  allowfullscreen ></iframe>     
+        </center>
+        
+    </body>
+    
+   
+    
+</html>
